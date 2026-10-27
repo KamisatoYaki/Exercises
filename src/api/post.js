@@ -1,35 +1,9 @@
-const POSTS_URL = '/api/posts';
+import api from "./axios";
 
-async function request(url, options) {
-    const response = await fetch(url, {
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        ...options,
-    });
+export const getPost =() => {
+    return api.get('/posts');
+};
 
-    const data = await response.json().catch(() => null);
-
-    if (!response.ok) {
-        const error = new Error(data?.message || 'The request failed.');
-        error.response = {
-            status: response.status,
-            data,
-        };
-        throw error;
-    }
-
-    return { data };
-}
-
-export function getPost() {
-    return request(POSTS_URL);
-}
-
-export function storePost(post) {
-    return request(POSTS_URL, {
-        method: 'POST',
-        body: JSON.stringify(post),
-    });
-}
+export const storePost = (data) => {
+    return api.post('/posts', data);
+};

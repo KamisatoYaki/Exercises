@@ -1,5 +1,9 @@
-function Button() {
-    return <button onClick={() => alert('Button clicked!')}>Click Me!</button>;
+function myButton() {
+  return (
+    <>
+      <button onClick={() => alert("Button clicked!")}>Click me!</button>
+    </>
+  );
 }
-
-export default Button;
+ 
+export default myButton;
