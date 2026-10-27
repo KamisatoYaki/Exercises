@@ -11,7 +11,7 @@ function formatDate(date) {
 }
 
 export default function PostCard({ post }) {
-    const authorName = post.user?.name || post.author?.name || post.user_name || 'Anonymous';
+    const authorName = post.user?.name || post.author?.name || post.user_name || 'Guest User';
     const content = post.message || post.content || '';
     const createdAt = post.created_at || post.createdAt;
 

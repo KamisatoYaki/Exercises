@@ -1,10 +1,10 @@
 //import logo from "./logo.svg";
 import "./App.css";
-import MyButton from "./components/button";
-import Card from "./components/Card";
-import Counter from "./components/Counter";
-import Form from "./components/Form";
-import List from "./components/List";
+import MyButton from "./component/Button";
+import Card from "./component/Card";
+import Counter from "./component/Counter";
+import Form from "./component/Form";
+import List from "./component/List";
  
 function App() {
   return (

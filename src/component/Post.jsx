@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { getPost, storePost } from "../../api/post";
+import { getPost, storePost } from "../api/post";
 import "./styles/post.css";
 import PostCard from "./PostCard";
  
 export default function Post() {
-  const { post, setPosts } = useState([]);
-  const { message, setMessage } = useState("");
-  const { error, setError } = useState("");
-  const { processing, setProcessing } = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [processing, setProcessing] = useState(false);
  
   useEffect(() => {
     const fetchPosts = async () => {
